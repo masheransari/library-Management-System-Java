@@ -126,7 +126,6 @@ public class Libraray {
                     System.out.println("please Enter The How Many days Student Take this book: ");
                     int quantity = 0;
                     int days = Integer.parseInt(bufferedReader.readLine());
-//                    quantity = Integer.parseInt(bufferedReader.readLine());
                     System.out.println("How many book is going to be issuing: ");
                     int tempQuantity = database.getQuantityCount(bookIdi);
                     che = true;
@@ -143,13 +142,8 @@ public class Libraray {
                         } else {
                             che = true;
                         }
-
                     } while (che == true);
 
-//                    if(database.getQuantityCount(bookIdi) >=0)
-//                    {
-//                        
-//                    }
                     temp = database.getCourse(bookIdi, quantity);
                     student.addInStudentRecord(studentName, days, studentID, temp);
                     break;
@@ -176,7 +170,6 @@ public class Libraray {
                     int bookIda = Integer.parseInt(bufferedReader.readLine());
                     System.out.println("How Many Book is going to returning : ");
                     int returnBook = Integer.parseInt(bufferedReader.readLine());
-
                     variabeleClassBook tempa = new variabeleClassBook();
                     tempa = student.getRetrieveBook(ida, bookIda);
                     if (tempa != null) {

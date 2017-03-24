@@ -15,8 +15,8 @@ public class variabeleClassBook {
     private String author;
     private String title;
     private int quantity;
-    
-    public variabeleClassBook(int id, String author, String title,int quan) {
+
+    public variabeleClassBook(int id, String author, String title, int quan) {
         this.id = id;
         this.author = author;
         this.title = title;

@@ -99,10 +99,10 @@ public class bookDatabase extends variabeleClassBook {
 
     public void addCourseStudent(variabeleClassBook v, int quantity) {
 //        arrayList.add(v);
-        int temp=0;
+        int temp = 0;
         for (int i = 0; i < arrayList.size(); i++) {
-            if (v.getId()==arrayList.get(i).getId()) {
-                temp = arrayList.get(i).getQuantity()+ quantity;
+            if (v.getId() == arrayList.get(i).getId()) {
+                temp = arrayList.get(i).getQuantity() + quantity;
                 arrayList.get(i).setQuantity(temp);
             }
         }
@@ -145,7 +145,7 @@ public class bookDatabase extends variabeleClassBook {
             if (bookId == arrayList.get(i).getId()) {
                 variabeleClassBook temp, temp1 = new variabeleClassBook();
                 tempQuantity = arrayList.get(i).getQuantity();
-                tempQuantity =tempQuantity - quantity;
+                tempQuantity = tempQuantity - quantity;
                 temp = arrayList.get(i);//Student
                 temp1 = arrayList.get(i);//Main
 
