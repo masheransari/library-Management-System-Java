@@ -30,7 +30,6 @@ public class studentDetail extends abstractDetail {
     private ArrayList<abstractDetail> arrayListStudent = new ArrayList<>();
 
     public studentDetail() {
-//        this.arrayListStudent = a;
     }
 
     public void addInStudentRecord(String na, int duration, String id, variabeleClassBook book) {
@@ -38,28 +37,24 @@ public class studentDetail extends abstractDetail {
         this.dateDuration = duration;
         this.idForBookIssue = id;
         this.mBook = book;
-        arrayListStudent.add(new abstractDetail(name,dateDuration,idForBookIssue,mBook) {
+        arrayListStudent.add(new abstractDetail(name, dateDuration, idForBookIssue, mBook) {
             @Override
             String getNamee() {
                 return name;
-//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             int getDate() {
                 return dateDuration;
-//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             String getIdForBookIssue() {
                 return idForBookIssue;
-//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             variabeleClassBook getVarBook() {
-//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 return mBook;
             }
         });
@@ -72,7 +67,7 @@ public class studentDetail extends abstractDetail {
         } else {
             System.err.println("This is Books is Issues To the Following Students");
             for (int i = 0; i < arrayListStudent.size(); i++) {
-                System.out.println("Student ID: " + arrayListStudent.get(i).getIdForBookIssue() + "\tStudent Name: " + arrayListStudent.get(i).getNamee() + "\tBook Aloted Duration: " + arrayListStudent.get(i).getVarBook().getId()+ "\tBook ID: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook Title: " + arrayListStudent.get(i).getVarBook().getTitle() + "\tBook Author: " + arrayListStudent.get(i).getVarBook().getAuthor());
+                System.out.println("Student ID: " + arrayListStudent.get(i).getIdForBookIssue() + "\tStudent Name: " + arrayListStudent.get(i).getNamee() + "\tBook Aloted Duration: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook ID: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook Title: " + arrayListStudent.get(i).getVarBook().getTitle() + "\tBook Author: " + arrayListStudent.get(i).getVarBook().getAuthor() + "\tQuantity: " + arrayListStudent.get(i).getVarBook().getQuantity());
             }
         }
     }
@@ -80,9 +75,8 @@ public class studentDetail extends abstractDetail {
     public void showStudentAllotedBooks(String studentId) {
         int total = 0;
         for (int i = 0; i < arrayListStudent.size(); i++) {
-//        Object object = arr[i];
             if (studentId.equals(arrayListStudent.get(i).getIdForBookIssue())) {
-                System.out.println("Student ID: " + arrayListStudent.get(i).getIdForBookIssue() + "\tStudent Name: " + arrayListStudent.get(i).getNamee() + "\tBook Aloted Duration: " + arrayListStudent.get(i).getVarBook().getId()+ "\tBook ID: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook Title: " + arrayListStudent.get(i).getVarBook().getTitle() + "\tBook Author: " + arrayListStudent.get(i).getVarBook().getAuthor());
+                System.out.println("Student ID: " + arrayListStudent.get(i).getIdForBookIssue() + "\tStudent Name: " + arrayListStudent.get(i).getNamee() + "\tBook Aloted Duration: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook ID: " + arrayListStudent.get(i).getVarBook().getId() + "\tBook Title: " + arrayListStudent.get(i).getVarBook().getTitle() + "\tBook Author: " + arrayListStudent.get(i).getVarBook().getAuthor() + "\tQuantity: " + arrayListStudent.get(i).getVarBook().getQuantity());
                 total++;
             }
         }
@@ -98,15 +92,15 @@ public class studentDetail extends abstractDetail {
         variabeleClassBook temp = new variabeleClassBook();
         for (int i = 0; i < arrayListStudent.size(); i++) {
             if (studentId.equals(arrayListStudent.get(i).getIdForBookIssue()) && bookId == arrayListStudent.get(i).getVarBook().getId()) {
-//            arrayListStudent.remove(i);
                 temp = arrayListStudent.get(i).getVarBook();
                 j = i;
-                arrayListStudent.remove(j);
+                if (temp.getQuantity() <= 0) {
+                    arrayListStudent.remove(j);
+                }
             }
         }
         if (j == -1) {
-//            arrayListStudent.remove(j);
-            temp=null;
+            temp = null;
             System.err.println("No Student Record Found..!!");
         }
         return temp;
@@ -114,7 +108,6 @@ public class studentDetail extends abstractDetail {
 
     @Override
     variabeleClassBook getVarBook() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         return mBook;
     }
 

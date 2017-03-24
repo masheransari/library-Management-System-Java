@@ -9,36 +9,30 @@ package libraray;
  *
  * @author asher.ansari
  */
-public abstract class abstractDetail extends variabeleClassBook{
+public abstract class abstractDetail{
+
     String name;
     int dateDuration;
     String idForBookIssue;
     variabeleClassBook mBook;
-    
-    public abstractDetail(){}
-    public abstractDetail(String name,int dur, String id, variabeleClassBook mBook){
+
+    public abstractDetail() {
+    }
+
+    public abstractDetail(String name, int dur, String id, variabeleClassBook mBook) {
         this.name = name;
-        this.dateDuration= dur;
+        this.dateDuration = dur;
         this.idForBookIssue = id;
         this.mBook = mBook;
     }
+
     abstract String getNamee();
+
     abstract int getDate();
+
     abstract String getIdForBookIssue();
+
     abstract variabeleClassBook getVarBook();
-
-
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public int getDateDuration() {
-//        return dateDuration;
-//    }
-//
-//    public String getIdForBookIssue() {
-//        return idForBookIssue;
-//    }
 
     public void setmBook(variabeleClassBook mBook) {
         this.mBook = mBook;
@@ -55,8 +49,4 @@ public abstract class abstractDetail extends variabeleClassBook{
     public void setIdForBookIssue(String idForBookIssue) {
         this.idForBookIssue = idForBookIssue;
     }
-    
-    
-    
-    
 }

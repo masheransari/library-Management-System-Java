@@ -10,16 +10,29 @@ package libraray;
  * @author asher.ansari
  */
 public class variabeleClassBook {
+
     private int id;
     private String author;
     private String title;
-
-    public variabeleClassBook(int id, String author, String title) {
+    private int quantity;
+    
+    public variabeleClassBook(int id, String author, String title,int quan) {
         this.id = id;
         this.author = author;
         this.title = title;
+        this.quantity = quan;
     }
-    public variabeleClassBook(){}
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public variabeleClassBook() {
+    }
 
     public int getId() {
         return id;
@@ -44,6 +57,5 @@ public class variabeleClassBook {
     public void setTitle(String title) {
         this.title = title;
     }
-     
-    
+
 }
